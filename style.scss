@@ -1,12 +1,90 @@
+body {
+  background: rgb(232, 211, 178);
+  background: linear-gradient(90deg, rgba(232, 211, 178, 1) 0%, rgba(240, 198, 239, 1) 44%, rgba(202, 171, 221, 1) 74%, rgba(181, 216, 233, 1) 100%);
+}
+
+%button {
+  border-radius: 0.5em;
+  background-color: #64c1f7;
+  border: none;
+  color: hsl(0, 0%, 100%);
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 500px;
-  background-color: #a81515;
+
   .content {
-    background-color: rgb(64, 2, 233);
-    padding: 10px;
+    h1 {
+      color: white;
+      font-size: 5em;
+    }
+
+    form {
+      input {
+        border-radius: 0.5em;
+        border: none;
+        width: 22em;
+        height: 2em;
+        padding: 1em;
+        margin-right: 1em;
+        margin-bottom: 3em;
+      }
+
+      input:focus {
+        outline: 0;
+        box-shadow: none;
+
+      }
+
+      .add-btn {
+        @extend %button;
+        width: 80px;
+        height: 55px;
+      }
+    }
+
+    .list {
+      list-style-type: none;
+      padding: 0px;
+      margin: 0;
+
+      div.box {
+        display: flex;
+        justify-content: space-between;
+        background-color: #f6f6f6;
+        border-radius: 0.5em;
+        padding-left: 10px;
+
+        .checkbox {
+          transform: scale(2);
+          padding-left: 15px;
+
+        }
+
+        .checkbox:checked {
+          accent-color: rgb(205, 149, 238);
+        }
+
+        span {
+          width: 270px;
+          padding: 20px;
+        }
+
+        .delete-btn {
+          @extend %button;
+          background-color: rgb(223, 97, 97);
+        }
+      }
+    }
   }
 }
- 
